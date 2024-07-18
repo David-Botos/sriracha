@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins, Sriracha } from "next/font/google";
+import Nav from "../components/nav";
 import "./globals.css";
+import { SrirachaProvider } from "@/context/srirachaContext";
 
 const sriracha = Sriracha({
   weight: "400",
@@ -23,10 +25,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={sriracha.className}>
-        insert nav component here
-        <nav></nav>
-        {children}</body>
+      <SrirachaProvider>
+        <body className={sriracha.className}>
+          <Nav />
+          {children}
+        </body>
+      </SrirachaProvider>
     </html>
   );
 }
