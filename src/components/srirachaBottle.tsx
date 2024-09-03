@@ -17,9 +17,9 @@ const SrirachaBottle = ({ isOpen }) => {
 
   return (
     <svg
-      width="60"
-      height="60"
-      viewBox="0 0 60 60"
+      width="53"
+      height="53"
+      viewBox="0 0 58 65"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -46,7 +46,10 @@ const SrirachaBottle = ({ isOpen }) => {
           />
         </motion.g>
         {/* hamburger lines */}
-        <motion.g animate={{ translateY: isOpen ? -5 : 0 }}>
+        <motion.g
+          animate={{ translateY: isOpen ? -6 : 0, translateX: isOpen ? 1 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
           <motion.path
             variants={topLineVariants}
             initial="closed"
