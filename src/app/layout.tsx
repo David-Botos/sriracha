@@ -1,8 +1,33 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Sriracha } from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local";
 
-const inter = Inter({ subsets: ["latin"] });
+const sriracha = Sriracha({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-sriracha",
+});
+const suse = localFont({
+  src: [
+    {
+      path: "../../public/fonts/SUSE-Thin.ttf",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/SUSE-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/SUSE-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+  ],
+  variable: "--font-suse",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +40,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${sriracha.className} ${suse.variable}`}>
+      <body className="suse-font">{children}</body>
     </html>
   );
 }

@@ -26,6 +26,14 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+p {
+  font-family: var(--font-suse), sans-serif;
+}
+
+h2 {
+  font-family: var(--font-sriracha), cursive;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
