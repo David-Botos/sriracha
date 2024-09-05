@@ -53,7 +53,8 @@ export default function Home() {
                   </p>
                 </div>
                 <p className="text-xs">
-                  I&apos;m sure I have my papers somewhere... 🙏 for your patience.
+                  I&apos;m sure I have my papers somewhere... 🙏 for your
+                  patience.
                 </p>
               </div>
             </div>
@@ -140,6 +141,9 @@ export default function Home() {
                 </li>
               </ul>
             </div>
+          </div>
+          <div className="border-2 border-redSriracha rounded-md w-full flex gap-2 p-1.5 justify-center">
+            <p className="text-redSriracha font-semibold">See for yourself</p>
           </div>
           <div></div>
           <div></div>
