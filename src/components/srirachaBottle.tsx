@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-const SrirachaBottle = ({ isOpen }) => {
+const SrirachaBottle = ({ isOpen }: { isOpen: boolean }) => {
   const topLineVariants = {
     closed: { d: "M4.61256 28.0834H12.6126" },
     open: { d: "M5.61256 28.0834L11.6126 34.0834" },
@@ -25,7 +25,10 @@ const SrirachaBottle = ({ isOpen }) => {
     >
       <g transform="translate(20,5)">
         <motion.g
-          animate={{ rotate: isOpen ? -150 : 0, translateY: isOpen ? -5 : 0 }}
+          animate={{
+            rotate: isOpen ? -150 : 0,
+            translateY: isOpen ? -5 : 0,
+          }}
           transition={{ duration: 0.3 }}
           style={{ originX: 0.5, originY: 0.62 }}
         >
@@ -47,7 +50,10 @@ const SrirachaBottle = ({ isOpen }) => {
         </motion.g>
         {/* hamburger lines */}
         <motion.g
-          animate={{ translateY: isOpen ? -6 : 0, translateX: isOpen ? 1 : 0 }}
+          animate={{
+            translateY: isOpen ? -6 : 0,
+            translateX: isOpen ? 1 : 0,
+          }}
           transition={{ duration: 0.3 }}
         >
           <motion.path

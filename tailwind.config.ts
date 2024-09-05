@@ -14,9 +14,10 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        'redSriracha': "#dd3c26",
-        'greenSriracha': "#38b53f",
-        'brownSriracha': "#9d8380",
+        redSriracha: "#dd3c26",
+        greenSriracha: "#38b53f",
+        brownSriracha: "#9d8380",
+        background: "#FBFEFF",
       },
     },
   },

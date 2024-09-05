@@ -5,10 +5,10 @@ import SrirachaBottle from "./srirachaBottle";
 import { useState } from "react";
 
 export function SrirachaNav() {
-  const [isOpen, setIsOpen] = useState<boolean>();
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <div className="w-full flex bg-white px-6 py-3 items-center justify-between">
+    <div className="w-full flex bg-white px-6 py-3 items-center justify-between border-b border-gray-200">
       <div className="flex gap-4 items-center">
         <div className="w-8">
           <Image src={rooster} alt="rooster" width={30} height={30} />

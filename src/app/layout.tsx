@@ -41,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${sriracha.className} ${suse.variable}`}>
-      <body className="suse-font">{children}</body>
+      <body className="suse-font text-brownSriracha">{children}</body>
     </html>
   );
 }
