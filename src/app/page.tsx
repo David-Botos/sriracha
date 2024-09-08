@@ -15,7 +15,7 @@ export default function Home() {
       <SrirachaNav />
       {/* TODO: mobile menu */}
       <main className="flex min-h-screen flex-col items-center justify-between bg-background">
-        <div className="w-full p-6 gap-12 flex flex-col">
+        <div className="w-full p-6 gap-8 flex flex-col">
           <div className="flex flex-col gap-4">
             <Cheesin />
             <div className="flex flex-col gap-6 align-middle py-4">
@@ -26,7 +26,10 @@ export default function Home() {
               <div className="flex gap-4">
                 <div className="border-2 border-redSriracha rounded-md w-full flex gap-2 p-1.5 justify-center">
                   <Image src={briefcase} alt="briefcase" />
-                  <p className="text-redSriracha font-semibold">View Work</p>
+                  <p className="text-redSriracha font-semibold">
+                    FIX THIS
+                    {/* TODO: insert a virtual tool that developers can use as a library for frontend */}
+                  </p>
                 </div>
                 <div className="border-2 border-redSriracha rounded-md w-full flex gap-2 p-1.5 justify-center">
                   <Image src={takeout} alt="briefcase" />

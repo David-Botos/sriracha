@@ -17,13 +17,23 @@ export function SrirachaNav() {
           </div>
           <h2 className="text-2xl text-redSriracha">David Botos</h2>
         </div>
-        <div className="flex pointer-events-auto" onClick={() => setIsOpen(!isOpen)}>
+        <div
+          className="flex pointer-events-auto"
+          onClick={() => setIsOpen(!isOpen)}
+        >
           <SrirachaBottle isOpen={isOpen} />
         </div>
       </div>
       <motion.div
-        className="w-screen absolute top-full bg-white z-10"
-        animate={{ opacity: isOpen ? 1 : 0 }}
+        className={
+          isOpen
+            ? "w-screen absolute bg-white z-10 top-full"
+            : "w-screen absolute bg-white z-10 hidden"
+        }
+        // display: "true"
+        animate={{
+          opacity: isOpen ? 1 : 0,
+        }}
         transition={{ duration: 0.3 }}
       >
         <p>Test</p>

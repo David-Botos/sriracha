@@ -62,13 +62,15 @@ export const WritingPieces = () => {
       <div>
         <div className="flex gap-2 items-center mb-2">
           <p className="text-sm">📝</p>
-          <p className="italic text-lg">What I stand for in my work:</p>
+          <p className="italic">What I stand for in my work:</p>
         </div>
         <ul className="flex flex-col gap-4">
           {writings.map((writing) => (
             <li className="justify-center">
               <div className="flex flex-col gap-0.5">
-                <p className="text-redSriracha underline">{writing.title}</p>
+                <p className="text-redSriracha underline font-semibold">
+                  {writing.title}
+                </p>
                 <p className="text-sm">{writing.description}</p>
               </div>
             </li>
@@ -78,7 +80,7 @@ export const WritingPieces = () => {
       <div>
         <div className="flex gap-2 items-center mb-2">
           <p className="text-sm">📚</p>
-          <p className="italic text-lg">Here is what I am trying to read:</p>
+          <p className="italic">Here is what I am trying to read:</p>
         </div>
         <ul className="flex flex-col gap-5">
           {readings.map((reading) => (

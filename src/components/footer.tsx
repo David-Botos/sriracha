@@ -5,9 +5,15 @@ import chevron from "../../public/assets/chevron.svg";
 export const Footer = () => {
   return (
     <div className="flex gap-2 items-center justify-between">
-      <div className="flex gap-2">
-        <div className="w-20 h-20">
-          <Image src={dmbLogo} alt="my logo" style={{ margin: "auto" }} />
+      <div className="flex gap-6">
+        <div className="w-15 h-15">
+          <Image
+            src={dmbLogo}
+            alt="my logo"
+            style={{ margin: "auto" }}
+            width={60}
+            height={74}
+          />
         </div>
         <div className="flex flex-col">
           <p className="font-semibold text-sm">TLDR:</p>

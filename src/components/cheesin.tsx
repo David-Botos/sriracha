@@ -7,6 +7,7 @@ export const Cheesin = () => {
   const [originLine, setOriginLine] = useState();
   const [endLine, setEndLine] = useState();
   const [boxLeftCorner, setBoxLeftCorner] = useState();
+  
   {/* TODO: Position the line and box to responsively remain at the same position near my mouth */}
   return (
     <div className="flex justify-center mr-6 relative">
