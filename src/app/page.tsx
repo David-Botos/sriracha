@@ -3,11 +3,12 @@ import Image from "next/image";
 import briefcase from "../../public/assets/briefcase.svg";
 import takeout from "../../public/assets/takeout.svg";
 import { Cheesin } from "@/components/cheesin";
-import chevron from "../../public/assets/chevron.svg";
 import { Mission } from "@/components/mission";
 import { ProficienciesList } from "@/components/proficiencies";
 import { WritingPieces } from "@/components/writing";
 import { Identities } from "@/components/identities";
+import { Footer } from "@/components/footer";
+
 
 export default function Home() {
   return (
@@ -70,9 +71,9 @@ export default function Home() {
           <div>
             <WritingPieces />
           </div>
-          <div></div>
-          <div></div>
-          <div></div>
+          <div>
+            <Footer />
+          </div>
         </div>
       </main>
     </div>
