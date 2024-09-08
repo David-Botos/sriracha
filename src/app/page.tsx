@@ -9,13 +9,12 @@ import { WritingPieces } from "@/components/writing";
 import { Identities } from "@/components/identities";
 import { Footer } from "@/components/footer";
 
-
 export default function Home() {
   return (
     <div>
       <SrirachaNav />
+      {/* TODO: mobile menu */}
       <main className="flex min-h-screen flex-col items-center justify-between bg-background">
-        {/* TODO: mobile menu */}
         <div className="w-full p-6 gap-12 flex flex-col">
           <div className="flex flex-col gap-4">
             <Cheesin />
