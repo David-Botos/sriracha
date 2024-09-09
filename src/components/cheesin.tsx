@@ -4,6 +4,7 @@ import Image from "next/image";
 import cheesin from "../../public/assets/Cheesinv2.png";
 import useScreenWidth from "@/utils/screenWidth";
 import Line from "@/utils/line";
+import { motion } from "framer-motion";
 
 export const Cheesin = () => {
   interface Coordinate {
@@ -40,7 +41,7 @@ export const Cheesin = () => {
         const newCoordinates = {
           start: {
             x: cheesinRect.width * 0.7 + cheesinRect.left - containerRect.left,
-            y: cheesinRect.height * 0.3 + cheesinRect.top -containerRect.top,
+            y: cheesinRect.height * 0.3 + cheesinRect.top - containerRect.top,
           },
           end: {
             x: bubbleRect.left - containerRect.left,
@@ -61,16 +62,29 @@ export const Cheesin = () => {
 
   return (
     <div ref={containerRef} className="flex justify-center mr-6 relative">
-      <Image ref={cheesinRef} src={cheesin} alt="cheesin" priority={true} />
+      <Image
+        ref={cheesinRef}
+        src={cheesin}
+        alt="cheesin"
+        priority={true}
+        width={screenWidth > 1024 ? 500 : 300}
+        height={screenWidth > 1024 ? 500 : 300}
+      />
       {lineCoordinates && (
         <Line start={lineCoordinates.start} end={lineCoordinates.end} />
       )}
-      <div
+      <motion.div
         ref={speechBubbleRef}
-        className="absolute left-full -translate-x-20 border-2 p-2 rounded-md border-greenSriracha"
+        className="absolute left-3/4 -translate-x-20 border-2 p-2 sm:px-4 rounded-md border-greenSriracha"
+        style={{ transformOrigin: "bottom left" }}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.3, delay: 0.5 }}
       >
-        <h2 className="text-greenSriracha text-nowrap">I&apos;m David!</h2>
-      </div>
+        <motion.h2 className="text-greenSriracha text-nowrap text-lg sm:text-xl md:text-2xl lg:text-3xl">
+          I&apos;m David!
+        </motion.h2>
+      </motion.div>
     </div>
   );
 };

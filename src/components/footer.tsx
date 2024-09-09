@@ -18,7 +18,7 @@ export const Footer = () => {
         <div className="flex flex-col">
           <p className="font-semibold text-sm">TLDR:</p>
           <p className="text-xs">I am David B.</p>
-          <p className="text-xs">I don't put my name on B.S.</p>
+          <p className="text-xs">I don&apos;t put my name on B.S.</p>
           <p className="text-xs">I love Sriracha</p>
         </div>
       </div>
