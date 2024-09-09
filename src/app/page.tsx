@@ -20,7 +20,7 @@ export default function Home() {
             <Cheesin />
             <div className="flex flex-col gap-6 align-middle py-4">
               <div className="flex flex-col gap-2">
-                <h2 className="text-center text-3xl">Designing and Building</h2>
+                <h2 className="text-center text-3xl">I Solve Problems with</h2>
                 <h2 className="text-center text-3xl">Couture Experiences</h2>
               </div>
               <div className="flex gap-4">
@@ -73,7 +73,7 @@ export default function Home() {
           <div>
             <WritingPieces />
           </div>
-          <div>
+          <div className="mt-8">
             <Footer />
           </div>
         </div>
