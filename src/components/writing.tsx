@@ -58,7 +58,7 @@ export const WritingPieces = () => {
   }
 
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-10 mt-10">
       <div>
         <div className="flex gap-2 items-center mb-2">
           <p className="text-sm">📝</p>
@@ -66,7 +66,7 @@ export const WritingPieces = () => {
         </div>
         <ul className="flex flex-col gap-4">
           {writings.map((writing) => (
-            <li className="justify-center">
+            <li className="justify-center" key={writing.title}>
               <div className="flex flex-col gap-0.5">
                 <p className="text-redSriracha underline font-semibold">
                   {writing.title}
@@ -84,7 +84,10 @@ export const WritingPieces = () => {
         </div>
         <ul className="flex flex-col gap-5">
           {readings.map((reading) => (
-            <li className="justify-center flex flex-col gap-1.5">
+            <li
+              className="justify-center flex flex-col gap-1.5"
+              key={reading.title}
+            >
               <div className="flex justify-between items-center">
                 <p className="text-redSriracha underline font-semibold">
                   {reading.title}
