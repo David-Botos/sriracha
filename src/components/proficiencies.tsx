@@ -1,18 +1,20 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
-import figma from "../../public/assets/figma.png";
-import react from "../../public/assets/react.png";
-import ts from "../../public/assets/ts.png";
-import dollar from "../../public/assets/dollar.svg";
-import circuit from "../../public/assets/circuit.png";
+import figma from "../../public/assets/figma.svg";
+import react from "../../public/assets/react.svg";
+import ts from "../../public/assets/ts.svg";
+import chip from "../../public/assets/chip.svg";
+import osChip from "../../public/assets/osChip.svg";
 import go from "../../public/assets/go.png";
 import rust from "../../public/assets/rust.png";
 import htmx from "../../public/assets/htmx.png";
-import bulb from "../../public/assets/lightbulb.png";
-import quill from "../../public/assets/quill.png";
-import pan from "../../public/assets/pan.png";
+import bulb from "../../public/assets/bulb.svg";
+import quill from "../../public/assets/quill.svg";
+import pan from "../../public/assets/cheffin.svg";
 import solo from "../../public/assets/solo.svg";
 import chevron from "../../public/assets/chevron.svg";
+import cyberSec from "../../public/assets/cyberSec.svg";
+import pAndL from "../../public/assets/pAndL.svg";
 
 export const ProficienciesList = () => {
   interface Skills {
@@ -24,7 +26,7 @@ export const ProficienciesList = () => {
 
   const proficiencies: Skills[] = [
     {
-      image: dollar,
+      image: pAndL,
       skill: "Business Strategy",
       examples: [""],
       isExamples: false,
@@ -49,13 +51,19 @@ export const ProficienciesList = () => {
       isExamples: false,
     },
     {
-      image: circuit,
+      image: cyberSec,
+      skill: "Cyber Security",
+      examples: [""],
+      isExamples: false,
+    },
+    {
+      image: osChip,
       skill: "RISC-V Architecture",
       examples: [""],
       isExamples: false,
     },
     {
-      image: circuit,
+      image: chip,
       skill: "Embedded Systems",
       examples: [""],
       isExamples: false,
@@ -66,6 +74,7 @@ export const ProficienciesList = () => {
       examples: [""],
       isExamples: false,
     },
+    // TODO: Standardize SVGification of go, rust, and htmx
     { image: go, skill: "Golang", examples: [""], isExamples: false },
     { image: rust, skill: "Rust", examples: [""], isExamples: false },
     { image: htmx, skill: "HTMX", examples: [""], isExamples: false },
