@@ -100,6 +100,7 @@ export const WritingPieces = () => {
                   <div className="h-1.5 w-20 rounded-l-sm bg-brownSriracha absolute"></div>
                 </div>
                 <p className="text-xs italic">30% Complete</p>
+                {/* TODO: add functionality to this */}
               </div>
             </li>
           ))}

@@ -24,6 +24,7 @@ export const Footer = () => {
       </div>
       <div className="flex gap-1">
         <p className="text-xs">Back to Top</p>
+        {/* TODO: add functionality to this */}
         <Image
           src={chevron}
           alt="return to top button"

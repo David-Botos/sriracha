@@ -20,14 +20,14 @@ export default function Home() {
             <Cheesin />
             <div className="flex flex-col gap-6 align-middle py-4">
               <div className="flex flex-col gap-2">
-                <h2 className="text-center text-3xl">I Solve Problems with</h2>
-                <h2 className="text-center text-3xl">Couture Experiences</h2>
+                <h2 className="text-center text-3xl">I Solve Problems</h2>
+                <h2 className="text-center text-3xl">and Cook Good Food</h2>
               </div>
               <div className="flex gap-4">
                 <div className="border-2 border-redSriracha rounded-md w-full flex gap-2 p-1.5 justify-center">
                   <Image src={briefcase} alt="briefcase" />
                   <p className="text-redSriracha font-semibold">
-                    FIX THIS
+                    Want my Library?
                     {/* TODO: insert a virtual tool that developers can use as a library for frontend */}
                   </p>
                 </div>
@@ -35,6 +35,7 @@ export default function Home() {
                   <Image src={takeout} alt="briefcase" />
                   <p className="text-redSriracha font-semibold">
                     Let&apos;s Cook!
+                    {/* TODO: add a contact modal / popover */}
                   </p>
                 </div>
               </div>
@@ -54,7 +55,7 @@ export default function Home() {
             </div>
             <Identities />
             <Mission />
-            <div className="border-2 border-dashed p-2 mt-2">
+            {/* <div className="border-2 border-dashed p-2 mt-2">
               <div className="flex gap-1 items-center">
                 <p>✌🏻</p>
                 <p className="italic text-xs">
@@ -65,7 +66,7 @@ export default function Home() {
                 I&apos;m sure I have my papers somewhere... 🙏 for your
                 patience.
               </p>
-            </div>
+            </div> */}
           </div>
           <div>
             <ProficienciesList />
