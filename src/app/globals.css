@@ -30,6 +30,10 @@ p {
   font-family: var(--font-suse), sans-serif;
 }
 
+input {
+  font-family: var(--font-suse), sans-serif;
+}
+
 h2 {
   font-family: var(--font-sriracha), cursive;
 }
