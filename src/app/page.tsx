@@ -14,6 +14,7 @@ import { PopupModal } from "@/components/popupModal";
 import { useCallback, useEffect, useState } from "react";
 import { EmailInput } from "@/components/emailInput";
 import { WorkSample } from "@/contexts/interfaces";
+import { PopupToast } from "@/components/toast";
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
@@ -23,10 +24,11 @@ export default function Home() {
     ((value: string | null) => void) | null
   >(null);
   const [isSubmitSuccessful, setIsSubmitSuccessful] = useState<boolean>(false);
+  const [isInfoToastOpen, setIsInfoToastOpen] = useState<boolean>(false);
 
   const handleModalClose = useCallback(() => {
     setModalOpen(false);
-    console.log('closed without email')
+    console.log("closed without email");
     if (resolveModal) {
       resolveModal(null);
     }
@@ -60,9 +62,13 @@ export default function Home() {
         setModalOpen(true);
       });
     } else {
-      // TODO: open a small toast that says I will be in touch soon also change out undefined type for accurate type to represent else
+      setIsInfoToastOpen(true);
     }
   }, [email, setResolveModal, setModalOpen]);
+
+  function handleInfoToastClose() {
+    setIsInfoToastOpen(false);
+  }
 
   return (
     <div className="h-full">
@@ -84,6 +90,22 @@ export default function Home() {
           </div>
         </div>
       </PopupModal>
+      <PopupToast
+        type="info"
+        isOpen={isInfoToastOpen}
+        onClose={handleInfoToastClose}
+      >
+        <div className="flex gap-4">
+          <p>
+            I&apos;ve got your email on file and will reach out soon. Feel free
+            to browse my experience and request any work samples you are
+            interested in!
+          </p>
+          <div onClick={() => handleInfoToastClose()}>
+            <h2>X</h2>
+          </div>
+        </div>
+      </PopupToast>
       <SrirachaNav />
       <main className="flex min-h-screen flex-col items-center justify-between bg-background">
         <div className="w-full p-6 gap-8 flex flex-col">
