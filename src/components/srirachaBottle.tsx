@@ -62,8 +62,8 @@ const SrirachaBottle = ({ isOpen }: { isOpen: boolean }) => {
             animate={isOpen ? "open" : "closed"}
             transition={{ duration: 0.3 }}
             stroke="white"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <motion.path
             variants={middleLineVariants}
