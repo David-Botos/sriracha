@@ -1,5 +1,5 @@
 "use client";
-import React, { useReducer } from "react";
+import React, { useCallback, useReducer } from "react";
 import Image, { StaticImageData } from "next/image";
 import figma from "../../public/assets/figma.svg";
 import react from "../../public/assets/react.svg";
@@ -22,6 +22,7 @@ import { reactExperiences } from "@/experiences/react";
 import { tsExperiences } from "@/experiences/ts";
 import { months } from "@/utils/months";
 import Link from "next/link";
+import { WorkSample, Skills, Example } from "@/contexts/interfaces";
 const TOGGLE_MENU = "TOGGLE_MENU";
 
 function menuReducer(state, action) {
@@ -36,24 +37,19 @@ function menuReducer(state, action) {
   }
 }
 
-export const ProficienciesList = () => {
-  interface Example {
-    startDate: Date;
-    endDate: Date;
-    title: string;
-    job: string;
-    description: string;
-    url?: string;
-    icon?: string;
-    hasSamples: boolean;
-  }
-  interface Skills {
-    image: StaticImageData;
-    skill: string;
-    examples?: Example[];
-    details?: string;
-  }
-
+export const ProficienciesList = ({
+  actions,
+  setActions,
+  openEmailModal,
+  handleModalClose,
+  email,
+}: {
+  actions: WorkSample[];
+  setActions: React.Dispatch<React.SetStateAction<WorkSample[]>>;
+  openEmailModal: () => Promise<string | null> | undefined;
+  handleModalClose: () => void;
+  email: string;
+}) => {
   const proficiencies: Skills[] = [
     {
       image: pAndL,
@@ -109,6 +105,29 @@ export const ProficienciesList = () => {
 
   const [state, dispatch] = useReducer(menuReducer, initialState);
 
+  const handleAddWorkSample = useCallback(
+    async (example: Example) => {
+      const newWorkSample: WorkSample = {
+        title: example.title,
+        company: example.job,
+        desc: example.description,
+      };
+
+      if (email) {
+        setActions((prevActions) => [...prevActions, newWorkSample]);
+      } else {
+        const userEmail = await openEmailModal();
+        if (userEmail) {
+          setActions((prevActions) => [...prevActions, newWorkSample]);
+        } else {
+          handleModalClose();
+          // Handle the case where the user didn't provide an email
+        }
+      }
+    },
+    [email, openEmailModal]
+  );
+
   return (
     <div className="flex flex-col gap-10">
       <div className="flex flex-col gap-2">
@@ -154,7 +173,10 @@ export const ProficienciesList = () => {
                 {proficiency.examples && state[proficiency.skill] && (
                   <div className="flex flex-col gap-5">
                     {proficiency.examples.map((example) => (
-                      <div className="flex flex-col gap-1 pl-7">
+                      <div
+                        className="flex flex-col gap-1 pl-7"
+                        key={example.description}
+                      >
                         <div className="flex w-full gap-5 items-center">
                           <div className="flex flex-col w-full">
                             <p className="text-sm">
@@ -181,19 +203,22 @@ export const ProficienciesList = () => {
                               )}
                             </p>
                           </div>
-                          <div
-                            className={
-                              example.hasSamples
-                                ? "border-2 px-2 py-1 rounded-md"
-                                : "border-2 px-2 py-1 rounded-md opacity-50"
-                            }
-                          >
-                            <p className="text-nowrap text-sm">
-                              {example.hasSamples
-                                ? `Req. Samples`
-                                : `No Samples`}
-                            </p>
-                          </div>
+                          {example.hasSamples ? (
+                            <div
+                              className="border-2 px-2 py-1 rounded-md"
+                              onClick={() => {
+                                handleAddWorkSample(example);
+                              }}
+                            >
+                              <p className="text-nowrap text-sm">
+                                Req. Samples
+                              </p>
+                            </div>
+                          ) : (
+                            <div className="border-2 px-2 py-1 rounded-md opacity-50">
+                              <p className="text-nowrap text-sm">No Samples</p>
+                            </div>
+                          )}
                           {/* TODO: Add request samples email contact modal / popover */}
                         </div>
                         <p className="text-sm">{example.description}</p>
@@ -242,9 +267,12 @@ export const ProficienciesList = () => {
           ))}
         </ul>
       </div>
-      <div className="border-2 border-redSriracha rounded-md w-full flex gap-2 p-1.5 justify-center">
+      <div
+        className="border-2 border-redSriracha rounded-md w-full flex gap-2 p-1.5 justify-center"
+        onClick={() => openEmailModal()}
+        // TODO: Check that a simple change here still works
+      >
         <p className="text-redSriracha font-semibold">Let&apos;s Chat</p>
-        {/* TODO: Add a contact modal / popover */}
       </div>
     </div>
   );
