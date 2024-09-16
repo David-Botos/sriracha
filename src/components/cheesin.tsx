@@ -22,10 +22,6 @@ export const Cheesin = () => {
 
   useEffect(() => {
     const updateLineCoordinates = () => {
-      console.log("Updating line coordinates...");
-      console.log("speechBubbleRef exists:", !!speechBubbleRef.current);
-      console.log("cheesinRef exists:", !!cheesinRef.current);
-
       if (
         speechBubbleRef.current &&
         cheesinRef.current &&
@@ -34,10 +30,6 @@ export const Cheesin = () => {
         const containerRect = containerRef.current?.getBoundingClientRect();
         const bubbleRect = speechBubbleRef.current.getBoundingClientRect();
         const cheesinRect = cheesinRef.current.getBoundingClientRect();
-
-        console.log("Bubble rect:", bubbleRect);
-        console.log("Cheesin rect:", cheesinRect);
-
         const newCoordinates = {
           start: {
             x: cheesinRect.width * 0.7 + cheesinRect.left - containerRect.left,
