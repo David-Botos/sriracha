@@ -34,25 +34,51 @@ export default function Home() {
     }
   }, [resolveModal]);
 
-  useEffect(() => {
-    console.log("Updated email:", email);
-  }, [email]);
+  async function addRow(email: string, actions: WorkSample[]) {
+    try {
+      const response = await fetch('/api/contact-request', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, samplesRequested: actions }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to add row');
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error('Error adding row:', error);
+      return null;
+    }
+  }
 
   const handleEmailSubmit = useCallback(
-    (submittedEmail: string) => {
-      // TODO: send email to server and only if its successful trigger the following two lines to set the perm email and trigger success dialogue
-      setIsSubmitSuccessful(true);
-      console.log("Form submitted with email:", submittedEmail);
-      setEmail(submittedEmail);
+    async (submittedEmail: string) => {
+      try {
+        const result = await addRow(submittedEmail, actions);
+        if (result && result.success) {
+          setIsSubmitSuccessful(true);
+          console.log("Form submitted with email:", submittedEmail);
+          setEmail(submittedEmail);
 
-      setTimeout(() => {
-        setModalOpen(false);
-      }, 2000);
-      if (resolveModal) {
-        resolveModal(submittedEmail);
+          setTimeout(() => {
+            setModalOpen(false);
+          }, 2000);
+          if (resolveModal) {
+            resolveModal(submittedEmail);
+          }
+        } else {
+          throw new Error('Failed to add row');
+        }
+      } catch (error) {
+        console.error('Error submitting email:', error);
+        // Handle error (e.g., show error message to user)
       }
     },
-    [resolveModal]
+    [resolveModal, actions]
   );
 
   const openEmailModal = useCallback((): Promise<string | null> | undefined => {
