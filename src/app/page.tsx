@@ -217,7 +217,6 @@ export default function Home() {
             <ProficienciesList
               actions={actions}
               setActions={setActions}
-              openEmailModal={openEmailModal}
               email={email}
             />
           </div>

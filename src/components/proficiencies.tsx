@@ -28,7 +28,15 @@ import Link from "next/link";
 import { WorkSample, Skills, Example } from "@/contexts/interfaces";
 const TOGGLE_MENU = "TOGGLE_MENU";
 
-function menuReducer(state, action) {
+type MenuState = { [key: string]: boolean };
+
+type MenuAction = {
+  type: typeof TOGGLE_MENU;
+  id: string;
+};
+
+
+function menuReducer(state: MenuState, action: MenuAction): MenuState {
   switch (action.type) {
     case TOGGLE_MENU:
       return {
@@ -43,14 +51,10 @@ function menuReducer(state, action) {
 export const ProficienciesList = ({
   actions,
   setActions,
-  openEmailModal,
-  handleModalClose,
   email,
 }: {
   actions: WorkSample[];
   setActions: React.Dispatch<React.SetStateAction<WorkSample[]>>;
-  openEmailModal: () => Promise<string | null> | undefined;
-  handleModalClose: () => void;
   email: string;
 }) => {
   const proficiencies: Skills[] = [
