@@ -36,71 +36,71 @@ export default function Home() {
     }
   }, [resolveModal]);
 
-  async function addRow(email: string, actions: WorkSample[]) {
-    try {
-      const response = await fetch('/api/contact-request', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, samplesRequested: actions }),
-      });
+  // async function addRow(email: string, actions: WorkSample[]) {
+  //   try {
+  //     const response = await fetch('/api/contact-request', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({ email, samplesRequested: actions }),
+  //     });
 
-      if (!response.ok) {
-        throw new Error('Failed to add row');
-      }
+  //     if (!response.ok) {
+  //       throw new Error('Failed to add row');
+  //     }
 
-      return await response.json();
-    } catch (error) {
-      console.error('Error adding row:', error);
-      return null;
-    }
-  }
+  //     return await response.json();
+  //   } catch (error) {
+  //     console.error('Error adding row:', error);
+  //     return null;
+  //   }
+  // }
 
-  const handleEmailSubmit = useCallback(
-    async (submittedEmail: string) => {
-      try {
-        const result = await addRow(submittedEmail, actions);
-        if (result && result.success) {
-          setIsSubmitSuccessful(true);
-          console.log("Form submitted with email:", submittedEmail);
-          setEmail(submittedEmail);
+  // const handleEmailSubmit = useCallback(
+  //   async (submittedEmail: string) => {
+  //     try {
+  //       const result = await addRow(submittedEmail, actions);
+  //       if (result && result.success) {
+  //         setIsSubmitSuccessful(true);
+  //         console.log("Form submitted with email:", submittedEmail);
+  //         setEmail(submittedEmail);
 
-          setTimeout(() => {
-            setModalOpen(false);
-          }, 2000);
-          if (resolveModal) {
-            resolveModal(submittedEmail);
-          }
-        } else {
-          throw new Error('Failed to add row');
-        }
-      } catch (error) {
-        console.error('Error submitting email:', error);
-        // Handle error (e.g., show error message to user)
-      }
-    },
-    [resolveModal, actions]
-  );
+  //         setTimeout(() => {
+  //           setModalOpen(false);
+  //         }, 2000);
+  //         if (resolveModal) {
+  //           resolveModal(submittedEmail);
+  //         }
+  //       } else {
+  //         throw new Error('Failed to add row');
+  //       }
+  //     } catch (error) {
+  //       console.error('Error submitting email:', error);
+  //       // Handle error (e.g., show error message to user)
+  //     }
+  //   },
+  //   [resolveModal, actions]
+  // );
 
-  const openEmailModal = useCallback((): Promise<string | null> | undefined => {
-    if (!email) {
-      return new Promise((resolve) => {
-        setResolveModal(() => resolve);
-        setModalOpen(true);
-      });
-    } else {
-      setIsInfoToastOpen(true);
-    }
-  }, [email, setResolveModal, setModalOpen]);
+  // const openEmailModal = useCallback((): Promise<string | null> | undefined => {
+  //   if (!email) {
+  //     return new Promise((resolve) => {
+  //       setResolveModal(() => resolve);
+  //       setModalOpen(true);
+  //     });
+  //   } else {
+  //     setIsInfoToastOpen(true);
+  //   }
+  // }, [email, setResolveModal, setModalOpen]);
 
-  function handleInfoToastClose() {
-    setIsInfoToastOpen(false);
-  }
+  // function handleInfoToastClose() {
+  //   setIsInfoToastOpen(false);
+  // }
 
   return (
     <div className="h-full">
-      <PopupModal isOpen={modalOpen} onClose={() => handleModalClose()}>
+      {/* <PopupModal isOpen={modalOpen} onClose={() => handleModalClose()}>
         <div className="flex flex-col my-4">
           <p className="text-lg font-semibold">
             I&apos;ll keep it real simple partner...
@@ -133,7 +133,7 @@ export default function Home() {
             <h2>X</h2>
           </div>
         </div>
-      </PopupToast>
+      </PopupToast> */}
       <SrirachaNav />
       <main className="flex min-h-screen flex-col items-center justify-between bg-background">
         <div className="w-full p-6 gap-8 flex flex-col max-w-3xl">
