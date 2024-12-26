@@ -12,10 +12,10 @@ interface Example {
 export const bizExperiences: Example[] = [
   {
     startDate: new Date("August 1, 2023"),
-    endDate: new Date(),
+    endDate: new Date("October 1, 2024"),
     title: "Consultant",
     job: "PwC",
-    description: `Worked on technical development for two separate projects. In one, I worked as a part of a larger frontend team.  For the other, I provided architectural guidance based on user demands.  Another project had me work with a team across Mexico and the US to implement SAP which stretched my ability to work multi-lingually about a technical product.`,
+    description: `Worked on technical development for two separate web-dev projects as well as a technical SAP implementation. In one web-dev project, I worked as a part of a larger full stack team to carry forward designs into a functional web app.  For the other, I provided architectural guidance based on user demands, producing a Visio and other resources to assess and map business requirements to cloud infrastructure.  The technical SAP implementation bridged a team across Mexico and the US to implement accounting processes and controls giving me international experience working multi-lingually about on a technical product.`,
     hasSamples: false,
   },
   {
@@ -23,7 +23,7 @@ export const bizExperiences: Example[] = [
     endDate: new Date("June 1 2024"),
     title: "Co-Founder",
     job: "Jetpack",
-    description: `Spearheaded a pivot to serve customer needs that we identified at the conference we attended for Canopay. We made the first cross platform toolkit that allowed travel advisors, a large segment of luxury travel, to modernize and mobilize their businesses with a mobile and desktop app.`,
+    description: `Spearheaded a pivot to serve customer needs that we identified at the conference we attended for Canopay. We made the first cross platform toolkit that allowed travel advisors, a large segment of luxury travel, to modernize and mobilize their businesses with a mobile and desktop app built in React Native and Next.js.`,
     hasSamples: true,
     url: 'https://www.usejetpack.com/'
   },
@@ -41,7 +41,7 @@ export const bizExperiences: Example[] = [
     endDate: new Date("May 1, 2022"),
     title: "Founder",
     job: "Helix",
-    description: `HelixCases provided firms like Lyft with recruiting competitions that captured the best college talent. This was my entrepreneurial crash course and my proudest "failure."  I would've gone broke without the money I earned doing this.`,
+    description: `HelixCases provided firms like Lyft with recruiting competitions that captured the best college talent. This was my entrepreneurial crash course and my proudest "failure."  I would've gone broke without the money I earned doing this while taking classes full-time.`,
     hasSamples: false,
   },
 ];

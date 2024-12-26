@@ -17,6 +17,7 @@ export const designExperiences: Example[] = [
     job: "Jetpack",
     description: `Formalized my design to code handoff process. Designed every screen of the mobile and desktop apps for a cross-platform solution to help travel advisors accomplish their major job responsibilities on the go or at home with an interface that innovated on both the design and experience of working with luxury travel clients.`,
     hasSamples: true,
+    url: 'https://www.usejetpack.com/'
   },
   {
     startDate: new Date("September 1, 2022"),
@@ -25,6 +26,7 @@ export const designExperiences: Example[] = [
     job: "Canopay",
     description: `Worked on my design to code handoff process. Led team discussions and customer interviews to extract insights about points optimizing travelers, turning user requests into an innovative interface that went further than any other product on the market.`,
     hasSamples: true,
+    url: 'https://www.canopay.co/'
   },
   {
     startDate: new Date("March 1, 2020"),

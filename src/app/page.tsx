@@ -3,6 +3,8 @@ import { SrirachaNav } from "@/components/nav";
 import Image from "next/image";
 import briefcase from "../../public/assets/briefcase.svg";
 import takeout from "../../public/assets/takeout.svg";
+import github from "../../public/assets/github.svg"
+import linkedin from "../../public/assets/linkedin.svg"
 import { Cheesin } from "@/components/cheesin";
 import { Mission } from "@/components/mission";
 import { ProficienciesList } from "@/components/proficiencies";
@@ -134,7 +136,7 @@ export default function Home() {
       </PopupToast>
       <SrirachaNav />
       <main className="flex min-h-screen flex-col items-center justify-between bg-background">
-        <div className="w-full p-6 gap-8 flex flex-col">
+        <div className="w-full p-6 gap-8 flex flex-col max-w-3xl">
           <div className="flex flex-col gap-4">
             <Cheesin />
             <div className="flex flex-col gap-6 align-middle py-4">
@@ -142,27 +144,52 @@ export default function Home() {
                 <h2 className="text-center text-3xl">I Solve Problems</h2>
                 <h2 className="text-center text-3xl">and Cook Good Food</h2>
               </div>
-              <div className="flex gap-4">
-                <div className="border-2 border-redSriracha rounded-md w-full  p-1.5">
-                  <Link
-                    href="#workExperience"
-                    className="flex gap-2 justify-center"
-                  >
-                    <Image src={briefcase} alt="briefcase" />
-                    <p className="text-redSriracha font-semibold">
-                      View Experience
-                      {/* TODO: insert a virtual tool that developers can use as a library for frontend */}
-                    </p>
-                  </Link>
+              <div className="flex flex-col gap-4">
+                <div className="flex gap-4">
+                  <div className="border-2 border-redSriracha rounded-md w-full  p-1.5">
+                    <Link
+                      href="#workExperience"
+                      className="flex gap-2 justify-center"
+                    >
+                      <Image src={briefcase} alt="briefcase" />
+                      <p className="text-redSriracha font-semibold">
+                        View Experience
+                        {/* TODO: insert a virtual tool that developers can use as a library for frontend */}
+                      </p>
+                    </Link>
+                  </div>
+                  <a href="mailto:david.m.botos@gmail.com" className="w-full flex" target="_blank">
+                    <div
+                      className="border-2 border-redSriracha rounded-md gap-2 p-1.5 justify-center w-full flex"
+                    >
+                      <Image src={takeout} alt="briefcase" />
+                      <p className="text-redSriracha font-semibold">
+                        Let&apos;s Cook!
+                      </p>
+                    </div>
+                  </a>
                 </div>
-                <div
-                  className="border-2 border-redSriracha rounded-md w-full flex gap-2 p-1.5 justify-center"
-                  onClick={() => openEmailModal()}
-                >
-                  <Image src={takeout} alt="briefcase" />
-                  <p className="text-redSriracha font-semibold">
-                    Let&apos;s Cook!
-                  </p>
+                <div className="flex gap-4">
+                  <a href="https://github.com/David-Botos" className="w-full flex" target="_blank">
+                    <div
+                      className="border-2 border-redSriracha rounded-md gap-2 p-1.5 justify-center w-full flex"
+                    >
+                      <Image src={github} alt="briefcase" />
+                      <p className="text-redSriracha font-semibold">
+                        GitHub
+                      </p>
+                    </div>
+                  </a>
+                  <a href="https://linkedin.com/in/david-botos/" className="w-full flex" target="_blank">
+                    <div
+                      className="border-2 border-redSriracha rounded-md gap-2 p-1.5 justify-center w-full flex"
+                    >
+                      <Image src={linkedin} alt="briefcase" />
+                      <p className="text-redSriracha font-semibold">
+                        LinkedIn
+                      </p>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -194,9 +221,9 @@ export default function Home() {
               email={email}
             />
           </div>
-          <div>
+          {/* <div>
             <WritingPieces />
-          </div>
+          </div> */}
           <div className="mt-8">
             <Footer />
           </div>

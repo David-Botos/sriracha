@@ -9,7 +9,7 @@ export function SrirachaNav() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <div className="relative flex flex-col pointer-events-none">
+    <div className="relative flex flex-col pointer-events-none" id="nav">
       <div className="w-full flex bg-white px-6 py-3 items-center justify-between border-b border-gray-200">
         <div className="flex gap-4 items-center">
           <div className="w-8">
@@ -17,14 +17,14 @@ export function SrirachaNav() {
           </div>
           <h2 className="text-2xl text-redSriracha">David Botos</h2>
         </div>
-        <div
+        {/* <div
           className="flex pointer-events-auto"
           onClick={() => setIsOpen(!isOpen)}
         >
           <SrirachaBottle isOpen={isOpen} />
-        </div>
+        </div> */}
       </div>
-      <motion.div
+      {/* <motion.div
         className={
           isOpen
             ? "w-screen absolute bg-white z-10 top-full"
@@ -36,16 +36,11 @@ export function SrirachaNav() {
         }}
         transition={{ duration: 0.3 }}
       >
-        <p>Test</p>
-        <p>Test</p>
-        <p>Test</p>
-        <p>Test</p>
-        <p>Test</p>
-        <p>Test</p>
-        <p>Test</p>
-        <p>Test</p>
-        <p>Test</p>
-      </motion.div>
+        <div className="p-5">
+          <p>I had more ambitious plans for multiple pages, but instead here is a spinning sriracha bottle</p>
+          <div className="h-20"></div>
+        </div>
+      </motion.div> */}
     </div>
   );
 }

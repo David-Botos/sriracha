@@ -7,6 +7,7 @@ import ts from "../../public/assets/ts.svg";
 import chip from "../../public/assets/chip.svg";
 import osChip from "../../public/assets/osChip.svg";
 import go from "../../public/assets/go.png";
+import python from "../../public/assets/python.png"
 import rust from "../../public/assets/rust.png";
 import htmx from "../../public/assets/htmx.png";
 import bulb from "../../public/assets/bulb.svg";
@@ -19,6 +20,8 @@ import pAndL from "../../public/assets/pAndL.svg";
 import { bizExperiences } from "@/experiences/business";
 import { designExperiences } from "@/experiences/design";
 import { reactExperiences } from "@/experiences/react";
+import { pythonExperiences } from "@/experiences/python";
+import { goExperiences } from "@/experiences/go";
 import { tsExperiences } from "@/experiences/ts";
 import { months } from "@/utils/months";
 import Link from "next/link";
@@ -53,7 +56,7 @@ export const ProficienciesList = ({
   const proficiencies: Skills[] = [
     {
       image: pAndL,
-      skill: "Business Strategy",
+      skill: "Business Models & Technology Operations",
       examples: bizExperiences,
     },
     { image: figma, skill: "UI/UX Design", examples: designExperiences },
@@ -63,12 +66,22 @@ export const ProficienciesList = ({
       skill: "TypeScript / Javascript",
       examples: tsExperiences,
     },
-    { image: quill, skill: "Poetry" },
+    { 
+      image: go,
+      skill: "Golang",
+      examples: goExperiences
+    },
+    { 
+      image: python,
+      skill: "Python",
+      examples: pythonExperiences
+    },
+    // { image: quill, skill: "Poetry" },
     { image: pan, skill: "Cooking" },
   ];
 
   const practicing: Skills[] = [
-    { image: solo, skill: "CUPS Protocol" },
+    // { image: solo, skill: "CUPS Protocol" },
     {
       image: quill,
       skill: "SVG Art and Animation",
@@ -89,8 +102,6 @@ export const ProficienciesList = ({
       image: bulb,
       skill: "Basic Circuits",
     },
-    // TODO: Standardize SVGification of go, rust, and htmx
-    { image: go, skill: "Golang" },
     { image: rust, skill: "Rust" },
     { image: htmx, skill: "HTMX" },
   ];
@@ -105,33 +116,33 @@ export const ProficienciesList = ({
 
   const [state, dispatch] = useReducer(menuReducer, initialState);
 
-  const handleAddWorkSample = useCallback(
-    async (example: Example) => {
-      const newWorkSample: WorkSample = {
-        title: example.title,
-        company: example.job,
-        desc: example.description,
-      };
+  // const handleAddWorkSample = useCallback(
+  //   async (example: Example) => {
+  //     const newWorkSample: WorkSample = {
+  //       title: example.title,
+  //       company: example.job,
+  //       desc: example.description,
+  //     };
 
-      if (email) {
-        setActions((prevActions) => [...prevActions, newWorkSample]);
-      } else {
-        const userEmail = await openEmailModal();
-        if (userEmail) {
-          setActions((prevActions) => [...prevActions, newWorkSample]);
-        } else {
-          handleModalClose();
-          // Handle the case where the user didn't provide an email
-        }
-      }
-    },
-    [email, openEmailModal]
-  );
+  //     if (email) {
+  //       setActions((prevActions) => [...prevActions, newWorkSample]);
+  //     } else {
+  //       const userEmail = await openEmailModal();
+  //       if (userEmail) {
+  //         setActions((prevActions) => [...prevActions, newWorkSample]);
+  //       } else {
+  //         handleModalClose();
+  //         // Handle the case where the user didn't provide an email
+  //       }
+  //     }
+  //   },
+  //   [email, openEmailModal]
+  // );
 
   return (
     <div className="flex flex-col gap-10">
       <div className="flex flex-col gap-2">
-        <p>I consider myself proficient in...</p>
+        <p>I am proficient in...</p>
         <ul className="flex flex-col gap-3">
           {proficiencies.map((proficiency) => (
             <li key={proficiency.skill}>
@@ -203,23 +214,13 @@ export const ProficienciesList = ({
                               )}
                             </p>
                           </div>
-                          {example.hasSamples ? (
-                            <div
-                              className="border-2 px-2 py-1 rounded-md"
-                              onClick={() => {
-                                handleAddWorkSample(example);
-                              }}
-                            >
+                          <a href="mailto:david.m.botos@gmail.com">
+                            <div className="border-2 px-2 py-1 rounded-md">
                               <p className="text-nowrap text-sm">
-                                Req. Samples
+                                Let&apos;s Chat
                               </p>
                             </div>
-                          ) : (
-                            <div className="border-2 px-2 py-1 rounded-md opacity-50">
-                              <p className="text-nowrap text-sm">No Samples</p>
-                            </div>
-                          )}
-                          {/* TODO: Add request samples email contact modal / popover */}
+                          </a>
                         </div>
                         <p className="text-sm">{example.description}</p>
                       </div>
@@ -267,13 +268,11 @@ export const ProficienciesList = ({
           ))}
         </ul>
       </div>
-      <div
-        className="border-2 border-redSriracha rounded-md w-full flex gap-2 p-1.5 justify-center"
-        onClick={() => openEmailModal()}
-        // TODO: Check that a simple change here still works
-      >
-        <p className="text-redSriracha font-semibold">Let&apos;s Chat</p>
-      </div>
+      <a href="mailto:david.m.botos@gmail.com">
+        <div className="border-2 border-redSriracha rounded-md w-full flex gap-2 p-1.5 justify-center">
+          <p className="text-redSriracha font-semibold">Let&apos;s Chat</p>
+        </div>
+      </a>
     </div>
   );
 };

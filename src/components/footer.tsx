@@ -18,11 +18,11 @@ export const Footer = () => {
         <div className="flex flex-col">
           <p className="font-semibold text-sm">TLDR:</p>
           <p className="text-xs">I am David B.</p>
-          <p className="text-xs">I don&apos;t put my name on B.S.</p>
+          <p className="text-xs">I do good work and cook food</p>
           <p className="text-xs">I love Sriracha</p>
         </div>
       </div>
-      <div className="flex gap-1">
+      <a href="#nav" className="flex gap-1">
         <p className="text-xs">Back to Top</p>
         {/* TODO: add functionality to this */}
         <Image
@@ -30,7 +30,7 @@ export const Footer = () => {
           alt="return to top button"
           style={{ rotate: "180deg" }}
         />
-      </div>
+      </a>
     </div>
   );
 };

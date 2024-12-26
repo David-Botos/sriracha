@@ -1,11 +1,11 @@
 export const Identities = () => {
   return (
     <div className="flex flex-col">
-      <p className="text-lg font-semibold">I am Seattle based:</p>
+      <p className="text-lg font-semibold">I am a Seattle based:</p>
       <ul className="list-disc ml-6 mt-1">
         <li className="mb-2">
           <div className="w-full justify-between flex">
-            <div className="flex gap-2 align-middle">
+            <div className="flex gap-1.5 align-middle">
               <p className="italic">Founder</p>
               <p>🧗🏻‍♂️</p>
               {/* i lead */}
@@ -14,7 +14,7 @@ export const Identities = () => {
         </li>
         <li className="mb-2">
           <div className="flex w-full justify-between">
-            <div className="flex gap-2">
+            <div className="flex gap-1.5">
               <p className="italic">UI/UX Designer</p>
               <p>👨🏻‍🎨</p>
               {/* i observe */}
@@ -23,7 +23,7 @@ export const Identities = () => {
         </li>
         <li className="mb-2">
           <div className="flex w-full justify-between">
-            <div className="flex gap-2">
+            <div className="flex gap-1.5">
               <p className="italic">Engineer</p>
               <p>🛠️</p>
               {/* i solve */}
@@ -32,7 +32,7 @@ export const Identities = () => {
         </li>
         <li className="mb-2">
           <div className="flex w-full justify-between">
-            <div className="flex gap-2">
+            <div className="flex gap-1.5">
               <p className="italic">Cyclist & Runner</p>
               <p>🚴🏻‍♂️ ... 🏃🏻‍♂️</p>
               {/* this is a lil mac reference */}
@@ -41,7 +41,7 @@ export const Identities = () => {
         </li>
         <li className="mb-2">
           <div className="flex w-full justify-between">
-            <div className="flex gap-2">
+            <div className="flex gap-1.5">
               <p className="italic">Practicing Christian</p>
               <p>✝️ 🏋🏻‍♂️</p>
               {/* and I am getting better everyday */}
@@ -50,7 +50,7 @@ export const Identities = () => {
         </li>
         <li>
           <div className="flex w-full justify-between">
-            <div className="flex gap-2">
+            <div className="flex gap-1.5">
               <p className="italic">Home Chef</p>
               <p>👨🏻‍🍳</p>
               {/* i think good food is important */}
