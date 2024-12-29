@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Sriracha } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
-import Head from "next/head";
 
 const sriracha = Sriracha({
   weight: "400",
@@ -33,8 +32,19 @@ const suse = localFont({
 export const metadata: Metadata = {
   title: "David Botos",
   description: "Design and Engineering informed with Business Strategy",
+  openGraph: {
+    images: [
+      {
+        url: 'https://davidbotos.com/og-image.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -42,17 +52,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${sriracha.className} ${suse.variable}`}>
-      <Head>
-        <Head>
-          <meta
-            property="og:image"
-            content="https://davidbotos.com/og-image.png"
-          />
-          <meta property="og:image:width" content="1200" />
-          <meta property="og:image:height" content="630" />
-          <meta name="twitter:card" content="summary_large_image" />
-        </Head>
-      </Head>
       <body className="suse-font text-brownSriracha">{children}</body>
     </html>
   );
