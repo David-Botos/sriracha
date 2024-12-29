@@ -46,7 +46,7 @@ export default function RootLayout({
         <Head>
           <meta
             property="og:image"
-            content="https://davidbotos.com/images/og-image.png"
+            content="https://davidbotos.com/og-image.png"
           />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
