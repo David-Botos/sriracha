@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Sriracha } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
+import Head from "next/head";
 
 const sriracha = Sriracha({
   weight: "400",
@@ -41,6 +42,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${sriracha.className} ${suse.variable}`}>
+      <Head>
+        <Head>
+          <meta
+            property="og:image"
+            content="https://davidbotos.com/images/og-image.png"
+          />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta name="twitter:card" content="summary_large_image" />
+        </Head>
+      </Head>
       <body className="suse-font text-brownSriracha">{children}</body>
     </html>
   );
