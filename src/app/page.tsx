@@ -145,7 +145,7 @@ export default function Home() {
                 <h2 className="text-center text-3xl">and Cook Good Food</h2>
               </div>
               <div className="flex flex-col gap-4">
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
                   <div className="border-2 border-redSriracha rounded-md w-full  p-1.5">
                     <Link
                       href="#workExperience"
