@@ -3,8 +3,11 @@ import { SrirachaNav } from "@/components/nav";
 import Image from "next/image";
 import briefcase from "../../public/assets/briefcase.svg";
 import takeout from "../../public/assets/takeout.svg";
-import github from "../../public/assets/github.svg"
-import linkedin from "../../public/assets/linkedin.svg"
+import github from "../../public/assets/github.svg";
+import linkedin from "../../public/assets/linkedin.svg";
+import voiceAgent from "../../public/assets/VoiceAgent.svg"
+import pencil from "../../public/assets/pencil.svg"
+import phone from '../../public/assets/phone.svg'
 import { Cheesin } from "@/components/cheesin";
 import { Mission } from "@/components/mission";
 import { ProficienciesList } from "@/components/proficiencies";
@@ -158,10 +161,12 @@ export default function Home() {
                       </p>
                     </Link>
                   </div>
-                  <a href="mailto:david.m.botos@gmail.com" className="w-full flex" target="_blank">
-                    <div
-                      className="border-2 border-redSriracha rounded-md gap-2 p-1.5 justify-center w-full flex"
-                    >
+                  <a
+                    href="mailto:david.m.botos@gmail.com"
+                    className="w-full flex"
+                    target="_blank"
+                  >
+                    <div className="border-2 border-redSriracha rounded-md gap-2 p-1.5 justify-center w-full flex">
                       <Image src={takeout} alt="briefcase" />
                       <p className="text-redSriracha font-semibold">
                         Let&apos;s Cook!
@@ -170,24 +175,24 @@ export default function Home() {
                   </a>
                 </div>
                 <div className="flex gap-4">
-                  <a href="https://github.com/David-Botos" className="w-full flex" target="_blank">
-                    <div
-                      className="border-2 border-redSriracha rounded-md gap-2 p-1.5 justify-center w-full flex"
-                    >
+                  <a
+                    href="https://github.com/David-Botos"
+                    className="w-full flex"
+                    target="_blank"
+                  >
+                    <div className="border-2 border-redSriracha rounded-md gap-2 p-1.5 justify-center w-full flex">
                       <Image src={github} alt="briefcase" />
-                      <p className="text-redSriracha font-semibold">
-                        GitHub
-                      </p>
+                      <p className="text-redSriracha font-semibold">GitHub</p>
                     </div>
                   </a>
-                  <a href="https://linkedin.com/in/david-botos/" className="w-full flex" target="_blank">
-                    <div
-                      className="border-2 border-redSriracha rounded-md gap-2 p-1.5 justify-center w-full flex"
-                    >
+                  <a
+                    href="https://linkedin.com/in/david-botos/"
+                    className="w-full flex"
+                    target="_blank"
+                  >
+                    <div className="border-2 border-redSriracha rounded-md gap-2 p-1.5 justify-center w-full flex">
                       <Image src={linkedin} alt="briefcase" />
-                      <p className="text-redSriracha font-semibold">
-                        LinkedIn
-                      </p>
+                      <p className="text-redSriracha font-semibold">LinkedIn</p>
                     </div>
                   </a>
                 </div>
@@ -208,6 +213,24 @@ export default function Home() {
             </div>
             <Identities />
             <Mission />
+            <div className="flex flex-col gap-4">
+              <h1 className="text-lg">Want to try out a project?</h1>
+              <div className="border-2 border-redSriracha rounded-md w-full  p-1.5">
+                <Link
+                  href="/bearhug-voice"
+                  className="flex gap-2 justify-center"
+                >
+                  <div className="flex flex-row gap-0">
+                    <Image src={phone} alt="phone" />
+                    <Image src={voiceAgent} alt="robot" />
+                    <Image src={pencil} alt="pencil" />
+                  </div>
+                  <p className="text-redSriracha font-semibold">
+                    BearHug Voice Agent
+                  </p>
+                </Link>
+              </div>
+            </div>
           </div>
           <div
             id="workExperience"
