@@ -7,12 +7,14 @@ import ts from "../../public/assets/ts.svg";
 import chip from "../../public/assets/chip.svg";
 import osChip from "../../public/assets/osChip.svg";
 import go from "../../public/assets/go.png";
-import python from "../../public/assets/python.png"
+import python from "../../public/assets/python.png";
 import rust from "../../public/assets/rust.png";
 import htmx from "../../public/assets/htmx.png";
 import bulb from "../../public/assets/bulb.svg";
 import quill from "../../public/assets/quill.svg";
 import pan from "../../public/assets/cheffin.svg";
+import postgres from "../../public/assets/postgres.svg";
+import dataArchitecture from "../../public/assets/dataArchitecture.svg";
 import solo from "../../public/assets/solo.svg";
 import chevron from "../../public/assets/chevron.svg";
 import cyberSec from "../../public/assets/cyberSec.svg";
@@ -26,6 +28,8 @@ import { tsExperiences } from "@/experiences/ts";
 import { months } from "@/utils/months";
 import Link from "next/link";
 import { WorkSample, Skills, Example } from "@/contexts/interfaces";
+import { postgresExamples } from "@/experiences/postgres";
+import { dataExamples } from "@/experiences/data";
 const TOGGLE_MENU = "TOGGLE_MENU";
 
 type MenuState = { [key: string]: boolean };
@@ -34,7 +38,6 @@ type MenuAction = {
   type: typeof TOGGLE_MENU;
   id: string;
 };
-
 
 function menuReducer(state: MenuState, action: MenuAction): MenuState {
   switch (action.type) {
@@ -70,17 +73,22 @@ export const ProficienciesList = ({
       skill: "TypeScript / Javascript",
       examples: tsExperiences,
     },
-    { 
+    {
+      image: dataArchitecture,
+      skill: "AI/ML & Data Architecture",
+      examples: dataExamples,
+    },
+    { image: postgres, skill: "PostgreSQL", examples: postgresExamples },
+    {
       image: go,
       skill: "Golang",
-      examples: goExperiences
+      examples: goExperiences,
     },
-    { 
+    {
       image: python,
       skill: "Python",
-      examples: pythonExperiences
+      examples: pythonExperiences,
     },
-    // { image: quill, skill: "Poetry" },
     { image: pan, skill: "Cooking" },
   ];
 
