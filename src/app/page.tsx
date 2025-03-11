@@ -5,9 +5,9 @@ import briefcase from "../../public/assets/briefcase.svg";
 import takeout from "../../public/assets/takeout.svg";
 import github from "../../public/assets/github.svg";
 import linkedin from "../../public/assets/linkedin.svg";
-import voiceAgent from "../../public/assets/VoiceAgent.svg"
-import pencil from "../../public/assets/pencil.svg"
-import phone from '../../public/assets/phone.svg'
+import voiceAgent from "../../public/assets/VoiceAgent.svg";
+import pencil from "../../public/assets/pencil.svg";
+import phone from "../../public/assets/phone.svg";
 import { Cheesin } from "@/components/cheesin";
 import { Mission } from "@/components/mission";
 import { ProficienciesList } from "@/components/proficiencies";
@@ -213,12 +213,17 @@ export default function Home() {
             </div>
             <Identities />
             <Mission />
-            <div className="flex flex-col gap-4">
-              <h1 className="text-lg">Want to try out a project?</h1>
+            <div className="flex flex-col gap-4 mt-5">
+              <div className="flex gap-5 items-center justify-between">
+                <h1 className="text-2xl">Want to try out a project?</h1>
+                <p className="italic">Password: ILoveHotSauce!</p>
+              </div>
               <div className="border-2 border-redSriracha rounded-md w-full  p-1.5">
                 <Link
-                  href="/bearhug-voice"
+                  href="https://voiceagent.davidbotos.com"
                   className="flex gap-2 justify-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <div className="flex flex-row gap-0">
                     <Image src={phone} alt="phone" />
